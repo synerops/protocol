@@ -4,7 +4,7 @@ agentic operating system in typescript
 
 ## how it works
 ```
-context → action → verification → synergy (we are here)
+context → action → verification
 ```
 
 ## example
@@ -43,14 +43,18 @@ Output to:
 ## structure
 ```
 .
+├── runtime.ts
 ├── actions
+│   ├── install.ts
 │   ├── mcp-client.ts
 │   ├── ops.ts
 │   └── tools.ts
 ├── agents
+│   ├── planner.ts
+│   ├── executor.ts
 │   ├── orchestrator.ts
 │   ├── community/
-│   ├── engineering/
+│   ├── fullstack/
 │   ├── gtm/
 │   └── product/
 ├── checks
@@ -67,6 +71,7 @@ Output to:
 └── system
     ├── collaboration.ts
     ├── env.ts
+    ├── installer.ts
     ├── mcp-server.ts
     ├── preferences.ts
     └── registry.ts
@@ -81,8 +86,51 @@ import { SynerOS } from '@syner/sdk'
 const syner = new SynerOS()
 
 const result = await syner.context.get('@app/user-preferences')
-const output = await syner.agents.invoke('engineering/fullstack', {
+const output = await syner.agents.invoke('fullstack/engineer', {
   task: 'generate api schema'
 })
 ```
+
+## synergy
+
+Syner OS enables complex task orchestration across multiple apps and agents:
+
+```ts
+// Access context from different apps
+const dashboardData = await syner.context.get('@app/analytics-dashboard/data')
+const crmUsers = await syner.context.get('@app/crm/users')
+
+// Coordinate multiple specialized agents
+await syner.agents.orchestrate({
+  task: 'generate quarterly report',
+  agents: ['@agents/fullstack/engineer', '@agents/product/manager'],
+  context: [dashboardData, crmUsers]
+})
+```
+
+Or use prompts:
+
+```prompt
+// quarterly-report.prompt
+Generate a comprehensive quarterly report combining engineering metrics and product insights.
+
+Context needed:
+- @app/analytics-dashboard/data
+- @app/crm/users
+- @app/jira/sprint-data
+- @system/preferences/report-format
+
+Agents:
+- @agents/fullstack/engineer → technical metrics
+- @agents/product/manager → business analysis
+
+Actions:
+- @actions/mcp-client → data-analysis
+- @actions/ops → generatePDF
+
+Output to:
+- @app/reports/q1-2025
+```
+
+The orchestrator connects isolated components, enabling agents to collaborate and share context through the `@tag` system. This is where synergy emerges: everything can work with everything.
 
