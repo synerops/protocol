@@ -1,6 +1,6 @@
 # syner
 
-agentic operating system in typescript
+agentic operating system with synergy ⚭
 
 ## how it works
 ```
