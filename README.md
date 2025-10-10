@@ -69,7 +69,6 @@ Output to:
 │   ├── storage.ts
 │   └── system.ts
 └── system
-    ├── collaboration.ts
     ├── env.ts
     ├── installer.ts
     ├── mcp-server.ts
