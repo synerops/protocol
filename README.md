@@ -19,7 +19,7 @@ Context needed:
 - @system/preferences/chart-style
 
 Actions:
-- @actions/mcp-client → python-analysis
+- @actions/mcp-servers → python-analysis
 - @actions/ops → writeFile
 
 Checks:
@@ -46,7 +46,7 @@ Output to:
 ├── runtime.ts
 ├── actions
 │   ├── install.ts
-│   ├── mcp-client.ts
+│   ├── mcp-servers.ts
 │   ├── ops.ts
 │   └── tools.ts
 ├── agents
@@ -71,7 +71,7 @@ Output to:
 └── system
     ├── env.ts
     ├── installer.ts
-    ├── mcp-server.ts
+    ├── mcp-client.ts
     ├── preferences.ts
     └── registry.ts
 ```
@@ -124,7 +124,7 @@ Agents:
 - @agents/product/manager → business analysis
 
 Actions:
-- @actions/mcp-client → data-analysis
+- @actions/mcp-servers → data-analysis
 - @actions/ops → generatePDF
 
 Output to:
