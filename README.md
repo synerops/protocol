@@ -61,7 +61,7 @@ Output to:
 │   ├── judge.ts
 │   ├── rules.ts
 │   └── screenshot.ts
-├── loop
+├── runs
 │   ├── cancel.ts
 │   ├── human-in-the-loop.ts
 │   ├── index.ts
