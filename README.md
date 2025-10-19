@@ -1,3 +1,3 @@
 # agent OS protocol
 
-Maintained by @synerops (current phase: `brainstorming`)
+Maintained by [@synerops](https://github.com/synerops) (current phase: `brainstorming`)
