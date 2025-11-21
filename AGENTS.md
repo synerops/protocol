@@ -16,7 +16,7 @@ The Agent OS Protocol is a comprehensive framework designed to orchestrate, mana
 #### 2. System Intelligence
 - **Registry**: Manages agent registration and discovery
 - **Environment**: Handles configuration and environment management
-- **Sandbox**: Provides isolated execution environments
+- **Filesystem**: Provides file system operations and management
 - **Settings**: Manages agent preferences and configurations
 
 #### 3. Context Management
